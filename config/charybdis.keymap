@@ -74,11 +74,11 @@ behaviors {
         layer_1 {
             bindings = <
 &none	&none	&none	&none	&none	&none	&none	&none	&none	&none	&none	&none
-&kp CAPS        &none            &none            &none            &none            &none         &none      &none        &kp UP          &none          &none     &none
-&kp LEFT_SHIFT  &none            &none            &none            &bt BT_NXT       &bt BT_CLR    &none      &kp LEFT    &kp DOWN         &kp RIGHT      &none     &none
-&kp LCTRL       &none            &none            &none            &none            &none         &none      &none       &kp PERIOD    &kp RIGHT_BRACKET  &none    &kp EQUAL
-                                                  &kp LEFT_ALT     &kp SPACE        &to 0         &none      &none
-                                                                   &mkp MB1         &mkp MB2      &kp ENTER
+&none    &kp SLASH    &kp ASTERISK    &kp MINUS    &kp PLUS    &none    &none    &kp N7    &kp N8    &kp N9    &kp PERCENT  &none
+&mt LEFT_BRACKET LEFT_PARENTHESIS    &mkp MB2    &kp ENTER    &kp BACKSPACE    &mkp MB1    &mt RIGHT_BRACKET RIGHT_PARENTHESIS    &kp EQUAL    &kp N4    &kp N5    &kp N6  &kp N0    &kp TILDE
+&none    &kp LWIN    &kp LEFT_ALT    &kp LSHIFT    &kp LCTRL  &none	&none	&kp N1    &kp N2    &kp N3    &kp PERIOD    &none
+&trans    &trans    &trans    &trans    &trans
+&trans    &trans    &trans
             >;
         };
     };
