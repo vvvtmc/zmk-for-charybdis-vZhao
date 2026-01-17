@@ -58,47 +58,10 @@ behaviors {
     combos {
         compatible = "zmk,combos";
 
-        btLoader {
-            bindings = <&bootloader>;
-            key-positions = <1 10>;
-            timeout-ms = <30>;
-            layers = <2>;
-        };
-
         z {
             bindings = <&kp Z>;
             key-positions = <9 10>;
             layers = <0>;
-        };
-
-        alt-tab {
-            bindings = <&kp LC(LA(TAB))>;
-            key-positions = <19 20 21>;
-        };
-
-        esc {
-            bindings = <&mt LA(F4) ESCAPE>;
-            key-positions = <26 27 28>;
-        };
-
-        meh-e {
-            bindings = <&kp LS(LA(LC(E)))>;
-            key-positions = <16 19 20>;
-        };
-
-        meh-a {
-            bindings = <&kp LA(LS(LC(A)))>;
-            key-positions = <15 16 19>;
-        };
-
-        meh-h {
-            bindings = <&kp LS(LA(LC(H)))>;
-            key-positions = <31 33 32>;
-        };
-
-        alt-tab2 {
-            bindings = <&kp LA(TAB)>;
-            key-positions = <14 15 16>;
         };
     };
    
