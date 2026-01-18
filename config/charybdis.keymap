@@ -59,35 +59,35 @@ combos {
 
         btLoader {
             bindings = <&bootloader>;
-            key-positions = <1 10>;
+            key-positions = <13 22>;
             timeout-ms = <30>;
             layers = <2>;
         };
 
         z {
             bindings = <&kp Z>;
-            key-positions = <9 10>;
+            key-positions = <21 22>;
             layers = <0>;
         };
 
         alt-tab {
             bindings = <&kp LC(LA(TAB))>;
-            key-positions = <19 20 21>;
+            key-positions = <31 32 33>;
         };
 
         esc {
             bindings = <&mt LA(F4) ESCAPE>;
-            key-positions = <26 27 28>;
+            key-positions = <38 39 40>;
         };
 
         meh-e {
             bindings = <&kp LS(LA(LC(E)))>;
-            key-positions = <16 19 20>;
+            key-positions = <28 32 32>;
         };
 
         meh-a {
             bindings = <&kp LA(LS(LC(A)))>;
-            key-positions = <15 16 19>;
+            key-positions = <27 28 31>;
         };
 
         meh-h {
@@ -97,7 +97,7 @@ combos {
 
         alt-tab2 {
             bindings = <&kp LA(TAB)>;
-            key-positions = <14 15 16>;
+            key-positions = <26 27 28>;
         };
     };
 
@@ -112,7 +112,7 @@ combos {
 &mt SQT UNDERSCORE	&kp R	&kp S	&kp N	&kp D	&mt SEMICOLON COMMA	&mt DOUBLE_QUOTES PERIOD	&kp A	&kp E	&kp I	&kp H	&mt EXCLAMATION QUESTION
 &none	&kp X	&kp F	&kp L	&kp C	&none	&none	&kp U	&kp O	&kp Y	&kp K	&none
 &mo 3    &kp T    &mo 1    &mo 2    &kp SPACE
-&none	&none	&none
+&mo 3	&mo 1	&mo 2
             >;
              sensor-bindings = <&scroll_vertical_encoder>,   // 编码器1：上下滚动
                              <&scroll_horizontal_encoder>;  // 编码器2：左右滚动
