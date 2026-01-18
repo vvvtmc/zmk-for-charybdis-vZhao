@@ -82,7 +82,7 @@ combos {
 
         meh-e {
             bindings = <&kp LS(LA(LC(E)))>;
-            key-positions = <28 32 32>;
+            key-positions = <28 31 32>;
         };
 
         meh-a {
@@ -92,7 +92,7 @@ combos {
 
         meh-h {
             bindings = <&kp LS(LA(LC(H)))>;
-            key-positions = <31 33 32>;
+            key-positions = <43 44 45>;
         };
 
         alt-tab2 {
