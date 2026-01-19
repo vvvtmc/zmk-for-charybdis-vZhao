@@ -1,16 +1,13 @@
-#include <behaviors.dtsi>
-#include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/rgb.h>
-#include <dt-bindings/zmk/outputs.h>
-#include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/mouse.h>
 #include <input/processors.dtsi>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/pointing.h>
 
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 1000 // 600
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 12   // 10
-
 
 &lt {
     tapping-term-ms = <200>;
@@ -35,26 +32,30 @@
 };
 
 / {
-  // 上下滚动编码器行为
+    // 上下滚动编码器行为
+
     scroll_vertical_encoder: scroll_vertical_encoder {
         compatible = "zmk,behavior-sensor-rotate";
         #sensor-binding-cells = <0>;
         bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
+
         tap-ms = <100>;
     };
 
     // 左右滚动编码器行为
+
     scroll_horizontal_encoder: scroll_horizontal_encoder {
         compatible = "zmk,behavior-sensor-rotate";
         #sensor-binding-cells = <0>;
         bindings = <&msc SCRL_LEFT>, <&msc SCRL_RIGHT>;
+
         tap-ms = <100>;
     };
 
-behaviors {       
+    behaviors {
     };
 
-combos {
+    combos {
         compatible = "zmk,combos";
 
         btLoader {
@@ -72,7 +73,7 @@ combos {
 
         alt-tab {
             bindings = <&kp LC(LA(TAB))>;
-            key-positions = <31 32 33>;
+            key-positions = <26 27 28>;
         };
 
         esc {
@@ -92,12 +93,12 @@ combos {
 
         meh-h {
             bindings = <&kp LS(LA(LC(H)))>;
-            key-positions = <43 44 45>;
+            key-positions = <31 32 33>;
         };
 
         alt-tab2 {
             bindings = <&kp LA(TAB)>;
-            key-positions = <26 27 28>;
+            key-positions = <43 44 45>;
         };
 
         Fn_to_Bluetooth {
@@ -107,69 +108,67 @@ combos {
         };
     };
 
-   
-   keymap {
+    keymap {
         compatible = "zmk,keymap";
 
         layer_0 {
             bindings = <
-&none	&none	&none	&none	&none	&none	&none	&none	&none	&none	&none	&none
-&none	&kp J	&kp G	&kp M	&kp P	&none	&none	&kp V	&kp B	&kp W	&kp Q	&none
-&mt SQT UNDERSCORE	&kp R	&kp S	&kp N	&kp D	&mt SEMICOLON COMMA	&mt DOUBLE_QUOTES PERIOD	&kp A	&kp E	&kp I	&kp H	&mt EXCLAMATION QUESTION
-&none	&kp X	&kp F	&kp L	&kp C	&none	&none	&kp U	&kp O	&kp Y	&kp K	&none
-&mo 3    &kp T    &mo 1    &mo 2    &kp SPACE
-&mo 3	&mo 1	&mo 2
+&none               &none  &none  &none  &none  &none                  &none                     &none      &none  &none  &none  &none
+&none               &kp J  &kp G  &kp M  &kp P  &none                  &none                     &kp V      &kp B  &kp W  &kp Q  &none
+&mt SQT UNDERSCORE  &kp R  &kp S  &kp N  &kp D  &mt SEMICOLON COMMA    &mt DOUBLE_QUOTES PERIOD  &kp A      &kp E  &kp I  &kp H  &mt EXCLAMATION QUESTION
+&none               &kp X  &kp F  &kp L  &kp C  &none                  &none                     &kp U      &kp O  &kp Y  &kp K  &none
+                                  &mo 3  &kp T  &mo 1                  &mo 2                     &kp SPACE
+                                         &mo 3  &mo 1                  &mo 2
             >;
-             sensor-bindings = <&scroll_vertical_encoder>,   // 编码器1：上下滚动
-                             <&scroll_horizontal_encoder>;  // 编码器2：左右滚动
+
+            sensor-bindings =
+                <&scroll_vertical_encoder>,
+                // 编码器1：上下滚动,
+                <&scroll_horizontal_encoder>;
+  // 编码器2：左右滚动
         };
 
         layer_1 {
             bindings = <
-&none	&none	&none	&none	&none	&none	&none	&none	&none	&none	&none	&none
-&none    &kp SLASH    &kp ASTERISK    &kp MINUS    &kp PLUS    &none    &none    &kp N7    &kp N8    &kp N9    &kp PERCENT  &none
-&mt LEFT_BRACKET LEFT_PARENTHESIS    &mkp MB2    &kp ENTER    &kp BACKSPACE    &mkp MB1    &mt RIGHT_BRACKET RIGHT_PARENTHESIS    &kp EQUAL    &kp N4    &kp N5    &kp N6  &kp N0    &kp TILDE
-&none    &kp LWIN    &kp LEFT_ALT    &kp LSHIFT    &kp LCTRL  &none	&none	&kp N1    &kp N2    &kp N3    &kp PERIOD    &none
-&trans    &trans    &trans    &trans    &trans
-&trans    &trans    &trans
+&none                              &none      &none         &none          &none      &none                                  &none      &none   &none   &none   &none        &none
+&none                              &kp SLASH  &kp ASTERISK  &kp MINUS      &kp PLUS   &none                                  &none      &kp N7  &kp N8  &kp N9  &kp PERCENT  &none
+&mt LEFT_BRACKET LEFT_PARENTHESIS  &mkp MB2   &kp ENTER     &kp BACKSPACE  &mkp MB1   &mt RIGHT_BRACKET RIGHT_PARENTHESIS    &kp EQUAL  &kp N4  &kp N5  &kp N6  &kp N0       &kp TILDE
+&none                              &kp LWIN   &kp LEFT_ALT  &kp LSHIFT     &kp LCTRL  &none                                  &none      &kp N1  &kp N2  &kp N3  &kp PERIOD   &none
+                                                            &trans         &trans     &trans                                 &trans     &trans
+                                                                           &trans     &trans                                 &trans
             >;
         };
 
         layer_2 {
             bindings = <
-&none	&none	&none	&none	&none	&none	&none	&none	&none	&none	&none	&none
+&none   &none           &none          &none              &none            &none           &none            &none      &none            &none      &none          &none
 &trans  &kp LC(MINUS)   &kp LC(PG_UP)  &kp LC(PAGE_DOWN)  &kp LC(EQUAL)    &trans          &trans           &none      &none            &none      &kp LA(LS(D))  &trans
 &trans  &kp LEFT_ARROW  &kp UP_ARROW   &kp DOWN_ARROW     &kp RIGHT_ARROW  &kp C_VOL_DN    &kp C_VOLUME_UP  &mkp MB1   &kp BACKSPACE    &kp ENTER  &kp DELETE     &trans
 &trans  &kp HOME        &kp PG_UP      &kp PG_DN          &kp END          &trans          &trans           &kp RCTRL  &kp RIGHT_SHIFT  &kp RALT   &kp RGUI       &trans
-&trans    &kp TAB    &trans    &trans    &trans
-&trans    &trans    &trans
+                                       &trans             &kp TAB          &trans          &trans           &trans
+                                                          &trans           &trans          &trans
             >;
         };
 
         layer_3 {
             bindings = <
-&none	&none	&none	&none	&none	&none	&none	&none	&none	&none	&none	&none
-&trans  &trans  &trans  &trans  &kp GRAVE       &trans    &trans  &kp F7  &kp F8  &kp F9  &kp F11  &trans
+&none   &none           &none         &none           &none            &none     &none   &none   &none   &none   &none    &none
+&trans  &trans          &trans        &trans          &kp GRAVE        &trans    &trans  &kp F7  &kp F8  &kp F9  &kp F11  &trans
 &trans  &msc SCRL_LEFT  &msc SCRL_UP  &msc SCRL_DOWN  &msc SCRL_RIGHT  &trans    &trans  &kp F4  &kp F5  &kp F6  &kp F10  &trans
 &trans  &kp LEFT_WIN    &kp LEFT_ALT  &kp LSHIFT      &kp LCTRL        &trans    &trans  &kp F1  &kp F2  &kp F3  &kp F12  &trans
-&trans    &trans    &trans    &trans    &trans
-&trans    &trans    &trans
+                                      &trans          &trans           &trans    &trans  &trans
+                                                      &trans           &trans    &trans
             >;
         };
 
         layer_4 {
             bindings = <
-&none	&none	&none	&none	&none	&none	&none	&none	&none	&none	&none	&none
+&none  &none  &none  &none  &none  &none    &none  &none         &none         &none         &none           &none
 &none  &none  &none  &none  &none  &none    &none  &none         &none         &none         &none           &none
 &none  &none  &none  &none  &none  &none    &none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &none           &none
 &none  &none  &none  &none  &none  &none    &none  &bt BT_CLR    &none         &none         &bt BT_CLR_ALL  &none
                      &none  &none  &none    &none  &none
             >;
         };
-
-
     };
 };
-
-
-
