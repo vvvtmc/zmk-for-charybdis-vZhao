@@ -71,36 +71,6 @@
             layers = <0>;
         };
 
-        alt-tab {
-            bindings = <&kp LC(LA(TAB))>;
-            key-positions = <26 27 28>;
-        };
-
-        esc {
-            bindings = <&mt LA(F4) ESCAPE>;
-            key-positions = <38 39 40>;
-        };
-
-        meh-e {
-            bindings = <&kp LS(LA(LC(E)))>;
-            key-positions = <28 31 32>;
-        };
-
-        meh-a {
-            bindings = <&kp LA(LS(LC(A)))>;
-            key-positions = <27 28 31>;
-        };
-
-        meh-h {
-            bindings = <&kp LS(LA(LC(H)))>;
-            key-positions = <31 32 33>;
-        };
-
-        alt-tab2 {
-            bindings = <&kp LA(TAB)>;
-            key-positions = <43 44 45>;
-        };
-
         Fn_to_Bluetooth {
             bindings = <&mo 4>;
             key-positions = <14 15>;
@@ -129,7 +99,7 @@
             // 编码器2：左右滚动
         };
 
-        Numbers {
+        NUM {
             bindings = <
 &none                              &none      &none         &none          &none      &none                                  &none      &none   &none   &none   &none        &none
 &none                              &kp SLASH  &kp ASTERISK  &kp MINUS      &kp PLUS   &none                                  &none      &kp N7  &kp N8  &kp N9  &kp PERCENT  &none
@@ -140,29 +110,29 @@
             >;
         };
 
-        Navigation {
+        NAV {
             bindings = <
 &none   &none           &none          &none              &none            &none           &none            &none      &none            &none      &none          &none
 &trans  &kp LC(MINUS)   &kp LC(PG_UP)  &kp LC(PAGE_DOWN)  &kp LC(EQUAL)    &trans          &trans           &none      &none            &none      &kp LA(LS(D))  &trans
-&trans  &kp LEFT_ARROW  &kp UP_ARROW   &kp DOWN_ARROW     &kp RIGHT_ARROW  &kp C_VOL_DN    &kp C_VOLUME_UP  &mkp MB1   &kp BACKSPACE    &kp ENTER  &kp DELETE     &trans
+&trans  &kp LEFT_ARROW  &kp UP_ARROW   &kp DOWN_ARROW     &kp RIGHT_ARROW  &kp C_VOL_DN    &kp C_VOLUME_UP  &kp LS(LA(LC(H)))   &kp BACKSPACE    &kp ENTER  &kp DELETE     &trans
 &trans  &kp HOME        &kp PG_UP      &kp PG_DN          &kp END          &trans          &trans           &kp RCTRL  &kp RIGHT_SHIFT  &kp RALT   &kp RGUI       &trans
                                        &trans             &kp TAB          &trans          &trans           &trans
                                                           &trans           &trans          &trans
             >;
         };
 
-        Fn {
+        FN {
             bindings = <
-&none   &none           &none         &none           &none            &none     &none   &none   &none   &none   &none    &none
-&trans  &trans          &trans        &kp BACKSLASH   &kp GRAVE        &trans    &trans  &kp F7  &kp F8  &kp F9  &kp F11  &trans
-&trans  &msc SCRL_LEFT  &msc SCRL_UP  &msc SCRL_DOWN  &msc SCRL_RIGHT  &trans    &trans  &kp F4  &kp F5  &kp F6  &kp F10  &trans
-&trans  &kp LEFT_WIN    &kp LEFT_ALT  &kp LSHIFT      &kp LCTRL        &trans    &trans  &kp F1  &kp F2  &kp F3  &kp F12  &trans
-                                      &trans          &trans           &trans    &trans  &trans
-                                                      &trans           &trans    &trans
+&none   &none              &none              &none            &none              &none      &none   &none   &none   &none   &none    &none
+&trans  &trans             &trans             &kp BACKSLASH    &kp GRAVE          &trans     &trans  &kp F7  &kp F8  &kp F9  &kp F11  &trans
+&trans  &kp LS(LA(LC(E)))  &mt LA(F4) ESCAPE  &kp LC(LA(TAB))  &kp LA(LS(LC(A)))  &trans     &trans  &kp F4  &kp F5  &kp F6  &kp F10  &trans
+&trans  &kp LEFT_WIN       &kp LEFT_ALT       &kp LSHIFT       &kp LCTRL          &trans     &trans  &kp F1  &kp F2  &kp F3  &kp F12  &trans
+                                      &trans          &trans           &trans     &trans  &trans
+                                                      &trans           &trans     &trans
             >;
         };
 
-        BlueTooth {
+        Bluetooth {
             bindings = <
 &none  &none  &none  &none  &none  &none    &none  &none         &none         &none         &none           &none
 &none  &none  &none  &none  &none  &none    &none  &none         &none         &none         &none           &none
