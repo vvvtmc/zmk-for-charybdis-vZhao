@@ -98,12 +98,12 @@
         };
 
         Lower_right {
-            bindings = <&kp LG(LC(LA(RS(F4))))>;
+            bindings = <&kp RA(RC(F4))>;
             key-positions = <43 44 45>;
         };
 
         Lower_left {
-            bindings = <&kp LG(LC(LA(F6)))>;
+            bindings = <&kp LC(LA(F6))>;
             key-positions = <40 39 38>;
         };
     };
@@ -123,7 +123,7 @@
 
             sensor-bindings =
                 <&scroll_vertical_encoder>,
-                // 编码器1：上下滚动,,,,
+                // 编码器1：上下滚动,,,,,
                 <&scroll_horizontal_encoder>;
 
             // 编码器2：左右滚动
